@@ -127,10 +127,13 @@ button {
     padding: 15px;
     min-height: 450px;
     position: relative;
+    max-height: 500px;
 }
 
 .main-content {
     text-align: center;
+   
+    overflow-y: auto;
 }
 
 /* decoration for images */
