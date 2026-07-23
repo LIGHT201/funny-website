@@ -1,0 +1,172 @@
+:root {
+    --background-img: url('images/cloud_bg.jpg');
+    --bg_color: #f0ccbe;
+    --warning_col: #000000;
+    --warningtxt_col: #ffffff;
+    --button_col: #000000;
+    --buttontxt_col: #ffffff;
+    --border_col: #0000007e;
+    --border_thckn: 2.421px;
+}
+
+/* TODO: HOLY FUCK I HATE THIS SHIT ITS SO UNORGANIZED AND 
+GENUINELY PISSES ME THE FUCK OFF AND IM TOO LAZY TO FIX IT CUZ
+IT ALL WORKS ANYWAYS.
+
+Also make sure to keep certain sections seperate- wait im the only one whos working on this
+ what the fuck am i doing lol, anyways just get it done
+ 
+ - Light ꨄ︎
+*/
+
+body {
+    background: var(--background-img);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: rgb(127, 150, 205);
+}
+
+
+@view-transition {
+    navigation: auto;
+}
+
+::view-transition-old(root) {
+    animation: 0.6s ease-in both glitch-out;
+}
+
+::view-transition-new(root) {
+    animation: 0.6s ease-out both glitch-in;
+}
+
+@keyframes glitch-out {
+    0% { filter: blur(0); opacity: 1; transform: translateX(0) rotateX(0deg) skewY(0deg); }
+    50% { filter: blur(4px) hue-rotate(90deg); transform: translateX(-5px) rotateX(50deg); }
+    100% { filter: blur(10px); opacity: 0; transform: translateX(10px) rotateX(360deg) skewY(130deg); }
+}
+
+@keyframes glitch-in {
+    0% { filter: blur(10px); opacity: 0; transform: translateX(10px) rotateX(0deg) ; }
+    100% { filter: blur(0); opacity: 1; transform: translateX(0) rotateX(-360deg); }
+}
+
+
+.container {
+    margin: 19vh 50vh;
+    text-align: center;
+    justify-content: center;
+    width: 520px;
+    height: 420px;
+    /* WHATTT???? ITS 420!!! SMOKE WEEEEEEEEEEEEEEEEEEEEED */
+    background-color: var(--bg_color);
+    filter: drop-shadow(13px 9px 1px #00000038);
+}
+
+.warningbox {
+
+    height: 53px;
+    width: 100%;
+    background: var(--warning_col);
+    color: var(--warningtxt_col);
+}
+
+button {
+    background-color: var(--button_col);
+    color: var(--buttontxt_col);
+    border-radius: 2px;
+    height: 40px;
+    width: 120px;
+}
+
+.enterpage {
+    font-size: 100%;
+}
+
+
+/* main content time */
+
+
+/* Layout container for the main page */
+.main-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+/* TOP/logo banner */
+.top-logo-container {
+    width: 900px; /* Match your preferred fixed desktop width */
+    height: 120px;
+    background: var(--bg_color);
+    border: var(--border_thckn) solid var(--border_col);
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.logo-banner {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Three-column layout grid */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 200px 500px 180px;
+    gap: 20px;
+    
+}
+
+.sidebar-pages, .main-content, .sidebar-side {
+    background-color: var(--bg_color);
+    border: var(--border_thckn) solid  var(--border_col);
+    padding: 15px;
+    min-height: 450px;
+    position: relative;
+}
+
+.main-content {
+    text-align: center;
+}
+
+/* decoration for images */
+.decor-item {
+    position:absolute;
+    z-index: 5;
+    pointer-events: none; /* so it isn't selectable. */
+    user-select: none;
+
+}
+.decor-item-behind {
+    position: absolute;
+    z-index: -3; 
+    pointer-events: none; /* so it isn't selectable. */
+    user-select: none;
+
+}
+
+.content-item {
+    width:100%;
+    height:fit-content;
+    border: var(--buttontxt_col) var(--border_thckn) solid;
+    background-color: var(--warning_col);
+    color: var(--warningtxt_col);
+    border-radius: 3px;
+}
+/* decoration for images */
+
+li ul {
+    height: 40px;
+    border: #967e75 3px solid ;
+    margin: 3px;
+    border-radius: 3px;
+     justify-content: center;
+    align-items: center;
+    font-size: 29px;
+    font-weight: 210;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
