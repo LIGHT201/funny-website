@@ -1,47 +1,37 @@
-<!DOCTYPE html>
 <html>
 
 <head>
-    <title>HATEFULL // Main</title>
-    <link rel="stylesheet" href="/main.css">
-    <script src="/js/transition.js" defer></script>
-    <script src="/js/load-layout.js" defer></script>
+	<link rel="stylesheet" href="css/other.css">
+    <script src="js/rants.js"></script>
+
     <link rel="icon" type="image/x-icon" href="/images/teeth logo.png">
+    <title>HATEFULL // RANTS</title>
 </head>
 
-<body class="main-page">
+<body>
+   
 
-    <!-- Top Logo Section  -->
-    <div id="header-container" style="width: 100%; display: flex; justify-content: center;"></div>
+    <div class="wrapperbox" style="position: relative;">
+        
+        <!-- the left side for the rants n shit -->
+        <div class="left" id="rants-display-box">
+            <h1>rants</h1>
+            <p>funny rants.</p>
+            <h1>pls choose a rant or whatever idc fuck you</h1>
+        </div>
 
-    <!-- Main Content Grid Wrapper -->
-    <div class="dashboard-grid">
+        <!-- funny nav area yes cuz agghhh!!!!!!!!!!!! -->
+        <div class="right">
+            <h3>Rants (goes from newest to oldest)</h3>
+            <!-- stuff for the rant to load -->
+            <ul>
+                <li><a href="#" onclick="loadRant(1)">Test Rant lol</a></li>
+                <li><a href="#" onclick="loadRant(2)">Hate my Brother</a></li>
+            </ul>
 
-        <!-- Left Sidebar -->
-        <div id="sidebar-pages-container"></div>
-
-        <!-- Center: Main Stuff -->
-        <main class="main-content" id="dynamic-content">
-          
-            <h1>HATEFULL</h1>
-
-            <li>
-                <ul>
-                    <a href="/rants/rant1.html">Zybook rant of doom!</a>
-
-                </ul>
-            </li>
-
-
-
-
-        </main>
-
-        <!-- Right Side Panel (Loaded via JS) -->
-        <div id="sidebar-side-container"></div>
-        <img src="/images/wings.png" width="990px" class="decor-item-behind" style="right: 17%;top:5%">
-    </div>
-
+         
+        </div>
+        <img src="../images/marsey.gif" style=" filter: drop-shadow(0px 1px 14px #7cdd05ee);">
+        
 </body>
-
 </html>

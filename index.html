@@ -1,28 +1,104 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>HATEFUL - Main</title>
-    <link rel="stylesheet" href="/main.css">
-     <link rel="icon" type="image/x-icon" href="/images/teeth logo.png">
-     <script src="js/parallax.js" defer></script>
-     <script src="js/transition.js" defer></script>
-     
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HATEFUL // Landing</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="icon" type="image/x-icon" href="/images/teeth logo.png">
+    <script src="js/parallax.js" defer></script>
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.160.1/build/three.module.js",
+                "three/addons/": "https://unpkg.com/three@0.160.1/examples/jsm/"
+            }
+        }
+    </script>
+    <meta property="og:title" content="HATEFUL">
+    <meta property="og:description" content="THE FUNNY RAGHHH!!!! cool shtuff by dumbass guy">
+    <meta property="og:url" content="https://hatefull.nekoweb.org/">
+    <meta property="og:type" content="website">
+    <meta name="theme-color" content="#FF0000">
 </head>
 <body>
     <div class="container" id="cont">
         <div class="warningbox">
             Not for mobile nor recommended for mobile.
         </div>
-
         <section>
             <p>Welcome to my epic place of awesomeness and stuff and shit!111!</p>
             <p>Stay for a while (pls??)</p>
-            <p>Anyways Press the "Enter me" button to enter(wow rlly??)</p>
+            <p>Anyways press the "Enter me" button to enter (wow rlly??)</p>
         </section>
-
-       <a href="/main.html"> <button class="enterpage">Enter me(PAUSE)</button></a>
+        <a href="/main.html">
+            <button class="enterpage">Enter me (PAUSE)</button>
+        </a>
     </div>
-</body>
+    <script type="module">
+        let xoff = Math.random() + 2130 * 0.5;
+        let yoff = Math.random() + 130 * 0.5;
+        let zoff = Math.random() + 130 * 0.5;
 
+        import * as THREE from "three";
+        import { TeapotGeometry } from "three/addons/geometries/TeapotGeometry.js";
+
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(
+            75,
+            window.innerWidth / window.innerHeight,
+            0.1,
+            1000
+        );
+
+        const renderer = new THREE.WebGLRenderer({ alpha: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        document.body.appendChild(renderer.domElement);
+
+        const ambientLight = new THREE.AmbientLight(0xffffff, 1.5);
+        scene.add(ambientLight);
+
+        const directionalLight = new THREE.DirectionalLight(0xffffff, 12);
+        directionalLight.position.set(5, 5, 5);
+        scene.add(directionalLight);
+
+        camera.position.z = 5;
+
+        const geometry = new TeapotGeometry(1, 15);
+        const material = new THREE.MeshStandardMaterial({
+            color: 0xa7b3d9,
+            roughness: 0.3,
+            metalness: 0.8
+        });
+
+        const teapot = new THREE.Mesh(geometry, material);
+        teapot.position.x = 3.8;
+        teapot.rotation.set(xoff, yoff, zoff);
+        scene.add(teapot);
+
+        const knotGeometry = new THREE.TorusKnotGeometry(0.7, 0.25, 100, 16);
+        const knotMaterial = new THREE.MeshStandardMaterial({
+            color: 0x8a2be2,
+            roughness: 0.2,
+            metalness: 0.9
+        });
+
+        const secondObject = new THREE.Mesh(knotGeometry, knotMaterial);
+        secondObject.position.set(-4.25, 1.5, 0);
+        scene.add(secondObject);
+
+        function animate() {
+            requestAnimationFrame(animate);
+            teapot.rotation.y += 0.01;
+            teapot.rotation.x += 0.001;
+            teapot.rotation.z += 0.0021;
+            secondObject.rotation.y += 0.015;
+            secondObject.rotation.z += 0.01;
+            secondObject.rotation.x += 0.01;
+            renderer.render(scene, camera);
+        }
+
+        animate();
+    </script>
 </body>
 </html>

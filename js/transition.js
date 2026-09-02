@@ -1,28 +1,31 @@
-document.addEventListener("DOMContentLoaded", async () => {
+document.addEventListener('DOMContentLoaded', async () => {
     try {
+        // Fetch and parse the layout components file
         let response = await fetch('components.html');
-        let text = await response.text();
+        let htmlText = await response.text();
+        
         let parser = new DOMParser();
-        let doc = parser.parseFromString(text, 'text/html');
+        let doc = parser.parseFromString(htmlText, 'text/html');
 
-        // Inject Header
-        let headerTemplate = doc.getElementById('header-content');
-        if (headerTemplate) {
-            document.getElementById('header-container').replaceWith(headerTemplate.content.cloneNode(true));
+     // Load Header
+        let headerContent = doc.getElementById('header-content');
+        if (headerContent) {
+            document.getElementById('header-container').replaceWith(headerContent.content.cloneNode(true));
         }
 
-        // Inject Left Sidebar
-        let pagesTemplate = doc.getElementById('sidebar-pages-content');
-        if (pagesTemplate) {
-            document.getElementById('sidebar-pages-container').replaceWith(pagesTemplate.content.cloneNode(true));
+        // Load sidebar page navs
+        let sidebarPagesContent = doc.getElementById('sidebar-pages-content');
+        if (sidebarPagesContent) {
+            document.getElementById('sidebar-pages-container').replaceWith(sidebarPagesContent.content.cloneNode(true));
         }
 
-        // Inject Right Sidebar
-        let sideTemplate = doc.getElementById('sidebar-side-content');
-        if (sideTemplate) {
-            document.getElementById('sidebar-side-container').replaceWith(sideTemplate.content.cloneNode(true));
+        // Load sidebar side
+        let sidebarSideContent = doc.getElementById('sidebar-side-content');
+        if (sidebarSideContent) {
+            document.getElementById('sidebar-side-container').replaceWith(sidebarSideContent.content.cloneNode(true));
         }
+
     } catch (error) {
-        console.error('Failed to load layout components:', error);
+        console.error('Failed to load layout components PANIC!!', error);
     }
 });

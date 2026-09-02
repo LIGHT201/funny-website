@@ -1,0 +1,35 @@
+{
+    "notes": {
+       
+        "2026-07-1": "Random date cuz yes!!!"
+          
+    },
+    "recurring": {
+        "yearly": {
+            
+
+            
+            "02-04": "Nuke Mali",
+            "02-02": "Nuke Mali",
+            "02-03": "Nuke Mali",
+            "02-05": "Nuke Mali",
+            "02-12": "Nuke Mali",
+
+            "09-10": "Nuke Peru",
+            "05-13": "Nuke Australia",
+            "05-23": "Nuke Australia again"
+            
+            
+            
+        },
+        "monthly": {
+            "01": [
+                  "Wake up it's the first of the month!1",
+                  "Nuke Swizterland"
+            ],
+            "22": "Nuke Ireland"
+            
+           
+        }
+    }
+}

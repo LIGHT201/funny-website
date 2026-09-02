@@ -1,9 +1,12 @@
-<!-- HEADER / LOGO-->
+<link rel="stylesheet" href="css/main.css">
+
+<!-- HEADER / LOGO -->
 <template id="header-content">
     <header class="top-logo-container">
         <img src="/images/logo.png" alt="Logo Banner" class="logo-banner">
-        <img class="decor-item" src="/images/teeth logo.png" style="width: 80px; top: 62%; right: 1%;">
+        <img class="decor-item" src="/images/teeth logo.png" style="width: 80px; top: 62%; right: 1%;" alt="Teeth logo">
         <link rel="preload" href="/components.html" as="fetch" crossorigin>
+        <script src="js/calander.js" defer></script>
     </header>
 </template>
 
@@ -15,16 +18,40 @@
             <li><a href="/main.html">Home</a></li>
             <li><a href="/about.html">About</a></li>
             <li><a href="/rants.html">Rants</a></li>
+            <li><a href="/chatroom.html">Chatroom</a></li>
+            <li><a href="/guestbook.html">Guestbook</a></li>
+            <li><a href="/Towa-Shrine.html">Towa Shrine</a></li>
+            
+            
         </ul>
-        <img class="decor-item" src="/images/eye-angel.png" style="width: 230px; top: 72%; right: 26%;">
+        <img class="decor-item" src="/images/eye-angel.png" style="width: 230px; top: 72%; right: 26%;" alt="Eye angel">
     </nav>
 </template>
 
 <!-- RIGHT SIDE -->
 <template id="sidebar-side-content">
-    <aside class="sidebar-side">
+    <aside class="sidebar-side" style="overflow-y: auto;">
         <h3>Side</h3>
-      
-        <img src="/images/angel.png" width="330px" class="decor-item-behind" style="left:83%;bottom:13%;transform: scale(.8,1.9);">
+        <img src="/images/angel.png" width="330" class="decor-item-behind" style="left: 83%; bottom: 13%; transform: scale(.8, 1.9);" alt="Angel">
+        <custom-calendar notes='{"2026-07-24": "Calander thing!", "2027-04-30": "Wrote custom JS calendar script today."}'></custom-calendar>
+       
+
+ <!-- note to self: change urls and stuff if adding more buttons -->
+<a href="https://hatefull.nekoweb.org" title="Static button (very cool)"><img src="images/button.png" width="90" alt="Static Button" onclick="copyCode(event, '<a href=\'https://hatefull.nekoweb.org\'><img src=\'https://hatefull.nekoweb.org/images/button.png\' width=\'90\' alt=\'Hatefull\'></a>')"></a>
+<a href="https://hatefull.nekoweb.org" title="Awesome animated button (pls use)"><img src="../images/buttonanim.gif" width="90" alt="Animated Button" onclick="copyCode(event, '<a href=\'https://hatefull.nekoweb.org\'><img src=\'https://hatefull.nekoweb.org/images/buttonanim.gif\' width=\'90\' alt=\'Hatefull\'></a>')"></a>
+
+<script>
+    function copyCode(event, code) {
+       // make sure it doesnt open it lol.
+        event.preventDefault();
+        
+        navigator.clipboard.writeText(code).then(() => {
+            
+        });
+    }
+</script>
+
+        <br>
+        <a href="https://nekoweb.org/"><img src="https://nekoweb.org/assets/buttons/button11.gif" alt="Nekoweb button"></a>
     </aside>
 </template>
